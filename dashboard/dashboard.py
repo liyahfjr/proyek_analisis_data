@@ -4,9 +4,9 @@ import seaborn as sns
 import streamlit as st
 from babel.numbers import format_currency
 
-sns.set(style='dark')
+sns.set(style='white')
 
-st.header('Dicoding Collection Dashboard :sparkles:')
+st.header('Peminjaman Sepeda Dashboard :sparkles:')
 st.subheader('Pengaruh Suhu terhadap Peminjaman Sepeda (6 Bulan Terakhir)')
 
 day_hour_df = pd.read_csv("all_data.csv")
