@@ -41,7 +41,8 @@ colors = ['lightblue', 'lightgreen']
 fig, ax = plt.subplots(figsize=(8, 8))
 ax.pie(sizes, labels=labels, autopct='%1.1f%%', colors=colors, startangle=90)
 ax.set_title('Persentase Peningkatan Peminjaman Sepeda\n(Hari Kerja vs. Hari Libur)')
-plt.show()
+
+st.pyplot(fig)
 
 busy_hours_data = last_year_data[(last_year_data['hr'] >= 7) & (last_year_data['hr'] <= 19) & (last_year_data['workingday_day'] == 1)]
 
@@ -51,7 +52,7 @@ ax.set_title('Hubungan Kecepatan Angin terhadap Peminjaman Sepeda (Jam Sibuk, Ha
 ax.set_xlabel('Kecepatan Angin')
 ax.set_ylabel('Jumlah Peminjaman')
 
-plt.show()
+st.pyplot(fig)
 
 # Hitung jumlah peminjaman pada hari kerja untuk setiap musim
 season_workday_counts = day_hour_df[day_hour_df['workingday_day'] == 1].groupby('seasons')['cnt_day'].sum()
