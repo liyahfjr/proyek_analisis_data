@@ -11,6 +11,7 @@ st.subheader('Pengaruh Suhu terhadap Peminjaman Sepeda (6 Bulan Terakhir)')
 
 day_hour_df = pd.read_csv("all_data.csv")
 
+day_hour_df['dteday'] = pd.to_datetime(day_hour_df['dteday'])
 six_months_ago = day_hour_df['dteday'].max() - pd.DateOffset(months=6)
 recent_data = day_hour_df[day_hour_df['dteday'] >= six_months_ago]
 
